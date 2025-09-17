@@ -1,54 +1,70 @@
 // Creating and Removing Directories
 var fs = require('fs');
 
+// fs.unlink('./stuff/writeMe.txt', function() {
+//     fs.rmdir('stuff')
+       
+//     });
+//     const fs = require("fs");
+
+// Delete a folder and its contents
+fs.rm("./stuff", { recursive: true, force: true }, (err) => {
+  if (err) {
+    console.error("Error deleting folder:", err);
+  } else {
+    console.log("Folder deleted successfully");
+  }
+});
+
+
 // fs.mkdirSync('stuff');
 // fs.rmdirSync('stuff');
 
-fs.mkdir('stuff', function() {
-    fs.readFile('readMe.txt', 'utf8', function(err, data) {
-        fs.writeFile('./stuff/writeMe.txt', data);
-    });
-});
+// fs.mkdir('stuff', function() {
+//     fs.readFile('readMe.txt', 'utf8', function(err, data) {
+//         fs.writeFile('./stuff/writeMe.txt', data);
+//     });
+// });
 
-// LATEST VERSION CODE NODE.JS
+// // LATEST VERSION CODE NODE.JS
 
-const fs = require("fs");
-
-// Create a folder named "stuff"
-fs.mkdir("stuff", (err) => {
-  if (err && err.code !== "EEXIST") {
-    console.error("Error creating folder:", err);
-    return;
-  }
-
-  // Read from readMe.txt
-  fs.readFile("readMe.txt", "utf8", (err, data) => {
-    if (err) {
-      console.error("Error reading file:", err);
-      return;
-    }
-
-    // Write the data into ./stuff/writeMe.txt
-    fs.writeFile("./stuff/writeMe.txt", data, (err) => {
-      if (err) {
-        console.error("Error writing file:", err);
-      } else {
-        console.log("File written successfully in ./stuff/writeMe.txt");
-      }
-    });
-  });
-});
-
-// fs.unlink('writeMe.txt');
 // const fs = require("fs");
 
-// fs.unlink("file.txt", (err) => {
-//   if (err) {
-//     console.error("Error deleting file:", err);
-//   } else {
-//     console.log("File deleted successfully");
+// // Create a folder named "stuff"
+// fs.mkdir("stuff", (err) => {
+//   if (err && err.code !== "EEXIST") {
+//     console.error("Error creating folder:", err);
+//     return;
 //   }
+
+//   // Read from readMe.txt
+//   fs.readFile("readMe.txt", "utf8", (err, data) => {
+//     if (err) {
+//       console.error("Error reading file:", err);
+//       return;
+//     }
+
+//     // Write the data into ./stuff/writeMe.txt
+//     fs.writeFile("./stuff/writeMe.txt", data, (err) => {
+//       if (err) {
+//         console.error("Error writing file:", err);
+//       } else {
+//         console.log("File written successfully in ./stuff/writeMe.txt");
+//       }
+//     });
+//   });
 // });
+
+// // fs.unlink('writeMe.txt');
+// // const fs = require("fs");
+
+// // fs.unlink("file.txt", (err) => {
+// //   if (err) {
+// //     console.error("Error deleting file:", err);
+// //   } else {
+// //     console.log("File deleted successfully");
+// //   }
+// // });
 
 
 
