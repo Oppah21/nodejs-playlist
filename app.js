@@ -1,8 +1,65 @@
-// READING AND WRITING FILES
+// Creating and Removing Directories
+var fs = require('fs');
+
+// fs.mkdirSync('stuff');
+// fs.rmdirSync('stuff');
+
+fs.mkdir('stuff', function() {
+    fs.readFile('readMe.txt', 'utf8', function(err, data) {
+        fs.writeFile('./stuff/writeMe.txt', data);
+    });
+});
+
+// LATEST VERSION CODE NODE.JS
+
+const fs = require("fs");
+
+// Create a folder named "stuff"
+fs.mkdir("stuff", (err) => {
+  if (err && err.code !== "EEXIST") {
+    console.error("Error creating folder:", err);
+    return;
+  }
+
+  // Read from readMe.txt
+  fs.readFile("readMe.txt", "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      return;
+    }
+
+    // Write the data into ./stuff/writeMe.txt
+    fs.writeFile("./stuff/writeMe.txt", data, (err) => {
+      if (err) {
+        console.error("Error writing file:", err);
+      } else {
+        console.log("File written successfully in ./stuff/writeMe.txt");
+      }
+    });
+  });
+});
+
+// fs.unlink('writeMe.txt');
+// const fs = require("fs");
+
+// fs.unlink("file.txt", (err) => {
+//   if (err) {
+//     console.error("Error deleting file:", err);
+//   } else {
+//     console.log("File deleted successfully");
+//   }
+// });
+
+
+
+
+
+
+//       // READING AND WRITING FILES
 // var fs = require('fs');
 
-// fs.readFile('readme.txt', 'utf8', function(err, data) {
-//     fs.writeFile('writeme.txt', data);
+// fs.readFile('readMe.txt', 'utf8', function(err, data) {
+//     fs.writeFile('writeMe.txt', data);
 //     // console.log(data);
 // });
 
@@ -12,7 +69,7 @@
 // fs.writeFileSync("writeme.txt", readMe);
 // console.log(readMe);
 
-//code
+// code
 
 
 // Event Emitter
@@ -75,13 +132,13 @@
 // }
 // sayHi();
 
-function callFunction(fun) {
-    fun();
-}
+// function callFunction(fun) {
+//     fun();
+// }
 
-//function expression
-var sayBye = function() {
-    console.log('bye');
-};
+// //function expression
+// var sayBye = function() {
+//     console.log('bye');
+// };
 
-callFunction(sayBye);
+// callFunction(sayBye);
