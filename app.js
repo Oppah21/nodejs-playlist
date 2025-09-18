@@ -1,18 +1,24 @@
-// READABLE STREAMS
-  var http = require('http');
+// WRITABLE STREAMS
+ var http = require('http');
  var fs = require('fs');
 
 var myReadStream = fs.createReadStream(__dirname + '/readMe.txt', 'utf8');
+var myWriteStream = fs.createWriteStream(__dirname + '/writeMe.txt');
 
 myReadStream.on('data',function(chunk){
     console.log('new chunk received;');
-    console.log(chunk);
+    myWriteStream.write(chunk);
 });
+// READABLE STREAMS
+//   var http = require('http');
+//  var fs = require('fs');
 
+// var myReadStream = fs.createReadStream(__dirname + '/readMe.txt', 'utf8');
 
-
-
-
+// myReadStream.on('data',function(chunk){
+//     console.log('new chunk received;');
+//     console.log(chunk);
+// });
 // STREAMS AND BUFFERS
 // Defination : buffers are temporary storage areas for data being transferred from one place to another.another
 // The buffer stores the data until it is ready to be used or processed.
