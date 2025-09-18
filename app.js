@@ -1,5 +1,39 @@
-// Creating and Removing Directories
-var fs = require('fs');
+// READABLE STREAMS
+  var http = require('http');
+ var fs = require('fs');
+
+var myReadStream = fs.createReadStream(__dirname + '/readMe.txt', 'utf8');
+
+myReadStream.on('data',function(chunk){
+    console.log('new chunk received;');
+    console.log(chunk);
+});
+
+
+
+
+
+// STREAMS AND BUFFERS
+// Defination : buffers are temporary storage areas for data being transferred from one place to another.another
+// The buffer stores the data until it is ready to be used or processed.
+// Transfer  small chunks of data at a time, rather than all at once.
+// STREAMS IN NODE.JS
+// Can create streams in Node.js to transfer data from one place to another.
+// Increase performance and reduce memory usage. 
+
+// CREATING A SERVER IN NODE.JS
+// var http = require('http');
+
+// var server = http.createServer(function(req, res) {
+//     console.log('request was made: ' + req.url);
+//     res.writeHead(200, {'Content-Type': 'text/plain'});
+//     res.end('Hello Oppah');
+
+// });
+
+// server.listen(3000, '127.0.0.1');
+// console.log('yo dawgs, now listening to port 3000');
+// Creating and Removing Directorie// var fs = require('fs');
 
 // fs.unlink('./stuff/writeMe.txt', function() {
 //     fs.rmdir('stuff')
@@ -8,13 +42,13 @@ var fs = require('fs');
 //     const fs = require("fs");
 
 // Delete a folder and its contents
-fs.rm("./stuff", { recursive: true, force: true }, (err) => {
-  if (err) {
-    console.error("Error deleting folder:", err);
-  } else {
-    console.log("Folder deleted successfully");
-  }
-});
+// fs.rm("./stuff", { recursive: true, force: true }, (err) => {
+//   if (err) {
+//     console.error("Error deleting folder:", err);
+//   } else {
+//     console.log("Folder deleted successfully");
+//   }
+// });
 
 
 // fs.mkdirSync('stuff');
