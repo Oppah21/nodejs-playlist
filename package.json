@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-playlist",
+  "version": "1.0.0",
+  "description": "a little test app",
+  "keywords": [
+    "fun",
+    "ninja"
+  ],
+  "homepage": "https://github.com/Oppah21/nodejs-playlist#readme",
+  "bugs": {
+    "url": "https://github.com/Oppah21/nodejs-playlist/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oppah21/nodejs-playlist.git"
+  },
+  "license": "ISC",
+  "author": "me",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

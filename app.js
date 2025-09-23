@@ -1,32 +1,60 @@
+// INTRODUCTION TO EXPRESS #23
+var express = require('express');
+
+var app = express();
+
+app.get('/', function(req, res){
+    res.send('This is the homepage');
+
+});
+app.get('/contact', function(req, res){
+    res.send('This is the contact page');
+
+});
+
+app.listen(3000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// THE PACKAGE.JSON FILE
+// file is a manifest file that contains metadata about the project and its dependencies. It is used by npm to manage the project's packages and scripts.
+// THE NODE PACKAGE MANAGER(NPM)
+// installing express
 // BASIC ROUTING
- var http = require('http');
- var fs = require('fs');
+//  var http = require('http');
+//  var fs = require('fs');
+// // INSTALLING NODEMON 22
+// var server = http.createServer(function(req, res) {
+//     console.log('request was made: ' + req.url); 
+//     if (req.url === '/home' || req.url === '/') {
+//         res.writeHead(200, {'Content-Type': 'text/html'});
+//         fs.createReadStream(__dirname + '/index.html').pipe(res);
+//     } else if (req.url === '/contact-us') {
+//         res.writeHead(200, {'Content-Type': 'text/html'});
+//         fs.createReadStream(__dirname + '/contact.html').pipe(res);
+//     } else if (req.url === '/api/ninjas') {
+//         var ninjas = [{name: 'ryu', age: 29}, {name: 'yoshi', age: 32}];
+//         res.writeHead(200, {'Content-Type': 'application/json'});
+//         res.end(JSON.stringify(ninjas));
+//         }else {
+//         res.writeHead(404, {'Content-Type': 'text/html'});
+//         fs.createReadStream(__dirname + '/404.html').pipe(res);
+//     }
+//     });
 
-var server = http.createServer(function(req, res) {
-    console.log('request was made: ' + req.url);
-    if (req.url === '/home' || req.url === '/') {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/index.html').pipe(res);
-    } else if (req.url === '/contact') {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/contact.html').pipe(res);
-    } else if (req.url === '/api/ninjas') {
-        var ninjas = [{name: 'ryu', age: 29}, {name: 'yoshi', age: 32}];
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.end(JSON.stringify(ninjas));
-        }else {
-        res.writeHead(404, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/404.html').pipe(res);
-    }
-    });
-
-server.listen(3000, '127.0.0.1');
-console.log('yo dawgs, now listening to port 3000');
-
-
-
-
-
+// server.listen(3000, '127.0.0.1');
+// console.log('yo dawgs, now listening to port 3000');
 // SERVING JSON DATA
 //  var http = require('http');
 //  var fs = require('fs');
