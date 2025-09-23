@@ -1,4 +1,4 @@
-// INTRODUCTION TO EXPRESS #23
+// ROUTE PARAMETERS #25
 var express = require('express');
 
 var app = express();
@@ -10,6 +10,9 @@ app.get('/', function(req, res){
 app.get('/contact', function(req, res){
     res.send('This is the contact page');
 
+});
+app.get('/profile/:name', function(req, res){
+    res.send('You requested to see a profile with name ' + req.params.name);
 });
 
 app.listen(3000);
@@ -26,6 +29,26 @@ app.listen(3000);
 
 
 
+
+
+
+
+
+// INTRODUCTION TO EXPRESS #23
+// var express = require('express');
+
+// var app = express();
+
+// app.get('/', function(req, res){
+//     res.send('This is the homepage');
+
+// });
+// app.get('/contact', function(req, res){
+//     res.send('This is the contact page');
+
+// });
+
+// app.listen(3000);
 
 // THE PACKAGE.JSON FILE
 // file is a manifest file that contains metadata about the project and its dependencies. It is used by npm to manage the project's packages and scripts.
